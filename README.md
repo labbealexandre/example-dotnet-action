@@ -1,5 +1,4 @@
 README title checker
-===
 
 # Usage
 
