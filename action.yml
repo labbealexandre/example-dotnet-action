@@ -1,0 +1,16 @@
+name: 'Custom action using C# checking for README.md titles'
+description: 'It is not for a production purpose, only for exercising with custom github actions.'
+branding:
+  icon: arrow-right-circle
+  color: purple
+inputs:
+  file-path:
+    description: 'File to check. Default to README.md'
+    required: true
+    default: 'README.md'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.file-path }}
+  entrypoint: "/app/entrypoint.sh"
