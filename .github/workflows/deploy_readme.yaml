@@ -1,0 +1,21 @@
+name: Run script on push to main when README is updated
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "README.md"
+  workflow_dispatch:
+
+jobs: 
+  deploy:
+    runs-on: ubuntu-latest
+    name: Check README.md
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check README.md
+        uses: labbealexandre/example-dotnet-action@v1
